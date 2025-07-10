@@ -38,23 +38,22 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    # 'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'drf_yasg',
-    'rest_framework',
-    # 'rest_framework.authtoken',
-    'djoser',
-    'django_filters',
-    'corsheaders',
-    'users',
-    'patients',
-    'records',
-    'organization',
+    # Temporarily disable these until we fix dependencies
+    # 'drf_yasg',
+    # 'rest_framework',
+    # 'djoser',
+    # 'django_filters',
+    # 'corsheaders',
+    # 'users',
+    # 'patients',
+    # 'records',
+    # 'organization',
 ]
 
 MIDDLEWARE = [
@@ -88,27 +87,26 @@ TEMPLATES = [
     },
 ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
-    ],
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        # 'rest_framework.authentication.TokenAuthentication',
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ],
-    'DEFAULT_FILTER_BACKENDS': [
-        'django_filters.rest_framework.DjangoFilterBackend',
-        'rest_framework.filters.SearchFilter',
-    ],
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
-}
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.AllowAny',
+#     ],
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework_simplejwt.authentication.JWTAuthentication',
+#     ],
+#     'DEFAULT_FILTER_BACKENDS': [
+#         'django_filters.rest_framework.DjangoFilterBackend',
+#         'rest_framework.filters.SearchFilter',
+#     ],
+#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+#     'PAGE_SIZE': 10
+# }
 
-SIMPLE_JWT = {
-   'AUTH_HEADER_TYPES': ('Bearer',),
-   "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
-   "REFRESH_TOKEN_LIFETIME": timedelta(days=10),
-}
+# SIMPLE_JWT = {
+#    'AUTH_HEADER_TYPES': ('Bearer',),
+#    "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
+#    "REFRESH_TOKEN_LIFETIME": timedelta(days=10),
+# }
 
 
 WSGI_APPLICATION = 'backend.wsgi.application'
